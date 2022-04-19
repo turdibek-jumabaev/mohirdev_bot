@@ -1,1 +1,1 @@
-from .main_state import MainState
+from . import main_state
