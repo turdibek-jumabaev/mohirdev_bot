@@ -1,5 +1,7 @@
 from loader import dp
+from data.matnlar import ustozlar
 from states.main_state import MainMenuState
+from keyboards.default.ustozlar_btn import USTOZLAR_BUTTON
 
 from aiogram import types
 
@@ -16,7 +18,8 @@ async def echo(message: types.Message):
         await message.answer('Maqolalar')
 
     elif message.text == 'Ustozlar':
-        await message.answer('Ustozlar')
+        await message.answer(text=ustozlar(), reply_markup=USTOZLAR_BUTTON)
+        await MainMenuState.ustozlar.set()
 
     else:
         await message.answer('Bunday bo\'lim mavjud emas')

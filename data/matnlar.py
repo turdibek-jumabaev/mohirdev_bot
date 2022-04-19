@@ -36,3 +36,22 @@ def help(html=True, MarkdownV2=False):
             "O'zingizga kerakli bo'limni tanlang.\n" \
             "Kurslar haqidagi malumotlarga oson ega bo'ling.\n" \
             "Marhamat, o'zingizni qiziqtirgan katigoriyani tanlang."
+
+
+def ustozlar(html=True, MarkdownV2=False):
+    if html:
+        return f"<b>Mohirdev.uz onlayn ta'lim platformasini mohir ustozlari.</b>" \
+            "\n\n" \
+            "Qaysi ustoz haqida makumot kerak. Quyida barcha ustozlar ko'rsatilgan. " \
+            "Ustozlar va ular tomonidan elon qilingan kurslar. "
+
+    elif MarkdownV2:
+        return f"**Mohirdev.uz onlayn ta'lim platformasini mohir ustozlari.**" \
+            "\n\n" \
+            "Qaysi ustoz haqida makumot kerak. Quyida barcha ustozlar ko'rsatilgan. " \
+            "Ustozlar va ular tomonidan elon qilingan kurslar. "
+
+    else:
+        return f"Mohirdev.uz onlayn ta'lim platformasini mohir ustozlari.\n\n" \
+            "Qaysi ustoz haqida makumot kerak. Quyida barcha ustozlar ko'rsatilgan. " \
+            "Ustozlar va ular tomonidan elon qilingan kurslar. "

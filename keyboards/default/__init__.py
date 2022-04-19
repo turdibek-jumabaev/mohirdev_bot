@@ -1,1 +1,2 @@
-from .main_menu import MAIN_MENU
+from . import main_menu
+from . import ustozlar_btn
