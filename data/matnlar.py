@@ -55,3 +55,12 @@ def ustozlar(html=True, MarkdownV2=False):
         return f"Mohirdev.uz onlayn ta'lim platformasini mohir ustozlari.\n\n" \
             "Qaysi ustoz haqida makumot kerak. Quyida barcha ustozlar ko'rsatilgan. " \
             "Ustozlar va ular tomonidan elon qilingan kurslar. "
+
+
+def kurslar(html=True, MarkdownV2=False):
+    if html:
+        return f"<b><a href='https://mohirdev.uz/courses/'>MohirDev</a> - onlayn ta'lim platformasidagi barcha kurslar.</b>"
+    elif MarkdownV2:
+        return f"*[MohirDev](https://mohirdev.uz/courses/) - onlayn ta'lim platformasidagi barcha kurslar.*"
+    else:
+        return f"MohirDev - onlayn ta'lim platformasidagi barcha kurslar."
