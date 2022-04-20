@@ -1,3 +1,4 @@
+
 import aiohttp
 from bs4 import BeautifulSoup
 
@@ -17,7 +18,8 @@ async def get_data():
                         "img": BeautifulSoup(
                             str(i), "html.parser").find("img")["src"]
                     })
-            return [list(result[i:i+size]) for i in range(len(result))[::size]]
+            return result
+            # return [list(result[i:i+size]) for i in range(len(result))[::size]]
 
 
 async def num_course():

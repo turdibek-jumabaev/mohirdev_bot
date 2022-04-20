@@ -2,6 +2,8 @@ from loader import dp
 from data.matnlar import ustozlar, kurslar
 from states.main_state import MainMenuState
 from keyboards.default.ustozlar_btn import USTOZLAR_BUTTON
+from keyboards.inline.kurslar import KURSLAR_BUTTON
+from utils.db_api.mohirdev import get_data
 
 from aiogram import types
 
@@ -9,7 +11,8 @@ from aiogram import types
 @dp.message_handler(content_types=types.ContentType.TEXT)
 async def echo(message: types.Message):
     if message.text == 'Kurslar':
-        await message.answer(kurslar())
+        data = await get_data()
+        await message.answer(kurslar(), reply_markup=KURSLAR_BUTTON(result=data))
 
     elif message.text == 'Practicum':
         await message.answer('Practicum')
