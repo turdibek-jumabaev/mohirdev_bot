@@ -1,14 +1,16 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-def KURSLAR_BUTTON(result, page=0):
+def keyboard(result, start, end):
     KB = []
-    for i in result:
+    for i in range(start, end):
         KB.append(InlineKeyboardButton(
-            text=i["title"], callback_data=i["link"].split("/")[-2]))
-    KB = [list(result[i:i+10]) for i in range(len(result))[::10]]
+            text=f"{result[i]['title']}", callback_data=result[i]['link'].split("/")[-2]))
+    return KB
+
+
+def KEYBOARD(result, a, b):
     return InlineKeyboardMarkup(
-        inline_keyboard=[
-            KB[page]
-        ], row_width=2
+        row_width=2,
+        inline_keyboard=keyboard(result=result, start=a, end=b)
     )
